@@ -20,8 +20,6 @@
   "devDependencies": {
     "@react-router/dev": "^7.3.0",
     "@tailwindcss/vite": "^4.0.0",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/react": "^16.2.0",
     "@types/node": "^20",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
