@@ -1,4 +1,4 @@
-import Navbar from './Navbar';
+import Navbar from './Navbar.jsx';
 import react from 'react';
 
 import '../app.css';
