@@ -9,6 +9,7 @@
     "typecheck": "react-router typegen && tsc",
     "test": "vitest --watch=false",
     "test:dev": "vitest"
+
   },
   "dependencies": {
     "@react-router/node": "^7.3.0",
