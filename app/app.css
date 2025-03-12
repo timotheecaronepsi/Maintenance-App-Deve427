@@ -1,25 +1,9 @@
-/* app.css */
-
-/* General styles */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f9fafb; /* Tailwind's bg-gray-100 */
-}
-
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-/* Navigation bar */
-.navbar {
-    background-color: #1f2937; /* Tailwind's bg-gray-800 */
-    padding: 1rem; /* Tailwind's p-4 */
+    background-color: #f9fafb;
 }
 
 .navbar-container {
@@ -28,55 +12,43 @@ body {
     align-items: center;
 }
 
-.navbar-brand {
-    color: #ffffff; /* Tailwind's text-white */
-    font-size: 1.125rem; /* Tailwind's text-lg */
-    font-weight: bold; /* Tailwind's font-bold */
-}
-
-.navbar-links {
-    display: flex;
-    gap: 1rem; /* Tailwind's space-x-4 */
-}
-
 .navbar-link {
-    color: #d1d5db; /* Tailwind's text-gray-300 */
+    color: #d1d5db;
     text-decoration: none;
 }
 
 .navbar-link:hover {
-    color: #ffffff; /* Tailwind's hover:text-white */
+    color: #163868;
 }
 
-/* Header */
-header {
-    background-color: #1f2937; /* Tailwind's bg-gray-800 */
-    color: #ffffff; /* Tailwind's text-white */
-    padding: 1rem; /* Tailwind's p-4 */
+nav {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 1rem;
     text-align: center;
 }
 
-/* Main content */
-main {
-    padding: 2rem; /* Tailwind's p-8 */
-    background-color: #ffffff; /* Tailwind's bg-white */
-    border-radius: 0.5rem; /* Tailwind's rounded-lg */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
-}
-
-/* Buttons */
 button {
-    background-color: #3b82f6; /* Tailwind's bg-blue-500 */
-    color: #ffffff; /* Tailwind's text-white */
-    padding: 0.5rem 1rem; /* Tailwind's px-4 py-2 */
+    background-color: #3b82f6; 
+    color: #ffffff; 
+    margin: 10px;
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: 0.25rem; /* Tailwind's rounded */
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-decoration: none; 
 }
 
+button a {
+    color: #ffffff; 
+    text-decoration: none;
+    font-size: 120%;
+}
+
+
 button:hover {
-    background-color: #2563eb; /* Tailwind's hover:bg-blue-600 */
+    background-color: #2563eb; 
 }
 
 /* Input fields */
@@ -87,12 +59,8 @@ input[type="number"] {
     margin-right: 0.5rem; /* Tailwind's mr-2 */
 }
 
-/* List items */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 1rem; /* Tailwind's mb-4 */
+h1 {
+    color: white;
+    font-size: 180%;
+    margin: 15px;
 }

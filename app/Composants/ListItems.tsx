@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'; // permet de naviguer entre les pages
 
 export default function ListItems() {
     return (
-        <main>
+        <>
             <header>
                 <div>
                     <nav>
@@ -17,6 +17,6 @@ export default function ListItems() {
             <div>
                 <p>Liste des Items</p>
             </div>
-        </main>
+        </>
     );
 }
