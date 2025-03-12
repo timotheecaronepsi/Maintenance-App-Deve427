@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { Accueil } from "~/Composants/Accueil";
+import { Accueil } from "~/Composants/Accueil.jsx";
 
 export function meta({}: Route.MetaArgs) {
   return [
