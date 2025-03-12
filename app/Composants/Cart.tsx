@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'; // permet de naviguer entre les pages
 
 export default function Cart() {
     return (
-        <main>
+        <>
             <header>
                 <div>
                     <nav>
@@ -17,6 +17,6 @@ export default function Cart() {
             <div>
                 <p>Cart</p>
             </div>
-        </main>
+        </>
     );
 }
