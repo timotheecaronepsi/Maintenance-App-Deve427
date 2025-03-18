@@ -1,12 +1,17 @@
+import { useEffect } from 'react';
 import Navbar from './Navbar.jsx';
 import react from 'react';
 
 import '../app.css';
 
 export function Accueil() {
+
+    useEffect(() => {
+        document.title = "Accueil"; // Met à jour le titre de l'onglet
+    }, []);
+
     return (
         <>
-            <title>Accueil</title>
             <nav>
                 <h1>Accueil</h1>
                 <Navbar />
