@@ -1,15 +1,16 @@
 import react from "react";
+import Navbar from './Navbar.jsx';
 import {Link} from 'react-router-dom'; // permet de naviguer entre les pages
 
 export default function ListItems() {
     let cart = [];
     const items = [{name: "item1", price: 10}, {name: "item2", price: 20}, {name: "item3", price: 30}];
-    const addItem = (itemName, quantity) => {
+    const addItem = (itemName, quantity, price) => {
         const cartItem = cart.find(i => i.name === itemName);
         if (cartItem) {
-            cartItem.quantity += quantity;
+            cartItem.property[0] += quantity;
         } else {
-            cart = [...cart, {name: itemName, quantity}];
+            cart = [...cart, {name: itemName, property: [quantity, price]}];
         }
         localStorage.clear()
         localStorage.setItem("cart", JSON.stringify(cart));
@@ -18,17 +19,11 @@ export default function ListItems() {
 
 
     return (
-        <main>
-            <header>
-                <div>
-                    <nav>
-                        <h1>Accueil</h1>
-                        <button><Link to="/">Accueil</Link></button>
-                        <button><Link to="/ListItems">List des items</Link></button>
-                        <button><Link to="/Cart">Panier</Link></button>
-                    </nav>
-                </div>
-            </header>
+        <>
+            <nav>
+                <h1>Liste des Items</h1>
+                <Navbar/>
+            </nav>
             <div>
                 <p>Liste des Items</p>
                 <table>
@@ -48,7 +43,7 @@ export default function ListItems() {
                             <td><input type="number" defaultValue={1} min="1" id={`item${index + 1}-quantity`}/></td>
                             <td>
                                 <button
-                                    onClick={() => addItem(item.name, parseInt((document.getElementById(`item${index + 1}-quantity`)).value))}>Add
+                                    onClick={() => addItem(item.name, parseInt((document.getElementById(`item${index + 1}-quantity`)).value), item.price)}>Add
                                     to Cart
                                 </button>
                             </td>
@@ -58,6 +53,6 @@ export default function ListItems() {
                 </table>
 
             </div>
-        </main>
+        </>
     );
 }
