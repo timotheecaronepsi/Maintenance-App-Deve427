@@ -1,22 +1,26 @@
 import react from "react";
 import Navbar from './Navbar.jsx';
-import {Link} from 'react-router-dom'; // permet de naviguer entre les pages
 
-export default function ListItems() {
-    let cart = [];
-    const items = [{name: "item1", price: 10}, {name: "item2", price: 20}, {name: "item3", price: 30}];
-    const addItem = (itemName, quantity, price) => {
-        const cartItem = cart.find(i => i.name === itemName);
-        if (cartItem) {
-            cartItem.property[0] += quantity;
-        } else {
-            cart = [...cart, {name: itemName, property: [quantity, price]}];
-        }
-        localStorage.clear()
+let cart = [];
+
+export function addItem(itemName, quantity, price) {
+    const cartItem = cart.find(i => i.name === itemName);
+    if (cartItem) {
+        cartItem.property[0] += quantity;
+    } else {
+        cart = [...cart, {name: itemName, property: [quantity, price]}];
+    }
+    if (typeof window !== 'undefined' && window.localStorage) {
+        localStorage.clear();
         localStorage.setItem("cart", JSON.stringify(cart));
         console.log(localStorage.getItem("cart"));
     }
+    return cart;
+}
 
+export default function ListItems() {
+
+    const items = [{name: "item1", price: 10}, {name: "item2", price: 20}, {name: "item3", price: 30}];
 
     return (
         <>
