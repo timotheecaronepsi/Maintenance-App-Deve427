@@ -1,24 +1,53 @@
-import react from "react";
+import react, {useState, useEffect} from "react";
 import Navbar from './Navbar.jsx';
 
 let cart = [];
 
 export function addItem(itemName, quantity, price) {
+    if (typeof window !== 'undefined' && window.localStorage) {
+        const storedCart = localStorage.getItem("cart");
+        cart = storedCart ? JSON.parse(storedCart) : [];
+    }
+
     const cartItem = cart.find(i => i.name === itemName);
     if (cartItem) {
         cartItem.property[0] += quantity;
     } else {
         cart = [...cart, {name: itemName, property: [quantity, price]}];
     }
+
     if (typeof window !== 'undefined' && window.localStorage) {
-        localStorage.clear();
         localStorage.setItem("cart", JSON.stringify(cart));
-        console.log(localStorage.getItem("cart"));
     }
     return cart;
 }
 
+export function clearCart() {
+    cart = [];
+    if (typeof window !== 'undefined' && window.localStorage) {
+        localStorage.removeItem("cart");
+    }
+}
+
 export default function ListItems() {
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.localStorage) {
+            const storedCart = localStorage.getItem("cart");
+            setCartItems(storedCart ? JSON.parse(storedCart) : []);
+        }
+    }, []);
+
+    const handleAddItem = (itemName, quantity, price) => {
+        const updatedCart = addItem(itemName, quantity, price);
+        setCartItems(updatedCart);
+    };
+
+    const handleClearCart = () => {
+        clearCart();
+        setCartItems([]);
+    };
 
     const items = [{name: "item1", price: 10}, {name: "item2", price: 20}, {name: "item3", price: 30}];
 
@@ -47,7 +76,7 @@ export default function ListItems() {
                             <td><input type="number" defaultValue={1} min="1" id={`item${index + 1}-quantity`}/></td>
                             <td>
                                 <button
-                                    onClick={() => addItem(item.name, parseInt((document.getElementById(`item${index + 1}-quantity`)).value), item.price)}>Add
+                                    onClick={() => handleAddItem(item.name, parseInt((document.getElementById(`item${index + 1}-quantity`)).value), item.price)}>Add
                                     to Cart
                                 </button>
                             </td>
@@ -55,7 +84,15 @@ export default function ListItems() {
                     ))}
                     </tbody>
                 </table>
-
+                <button onClick={handleClearCart}>Clear Cart</button>
+                <div>
+                    <h2>Cart Contents</h2>
+                    <ul>
+                        {cartItems.map((item, index) => (
+                            <li key={index}>{item.name} - Quantity: {item.property[0]}, Price: {item.property[1]}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </>
     );

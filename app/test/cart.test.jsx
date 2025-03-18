@@ -34,9 +34,9 @@ afterEach(() => {
 
 test('renders cart page with items', () => {
   render(
-    <Router>
-      <CartPage />
-    </Router>
+      <Router>
+        <CartPage />
+      </Router>
   );
 
   // Vérification que les articles sont affichés
@@ -52,9 +52,9 @@ test('renders cart page with items', () => {
 
 test('calcul du total du panier', () => {
   render(
-    <Router>
-      <CartPage />
-    </Router>
+      <Router>
+        <CartPage />
+      </Router>
   );
 
   // Vérification que le total du panier est calculé correctement
@@ -63,9 +63,9 @@ test('calcul du total du panier', () => {
 
 test('mettre à jour la quantité d\'un article', () => {
   render(
-    <Router>
-      <CartPage />
-    </Router>
+      <Router>
+        <CartPage />
+      </Router>
   );
 
   // Modifier la quantité de l'article 1
@@ -79,9 +79,9 @@ test('mettre à jour la quantité d\'un article', () => {
 
 test('supprimer un article du panier', () => {
   render(
-    <Router>
-      <CartPage />
-    </Router>
+      <Router>
+        <CartPage />
+      </Router>
   );
 
   // Cliquer sur le bouton de suppression de l'article 1
@@ -98,9 +98,9 @@ test('panier vide', () => {
   global.localStorage.setItem('cart', JSON.stringify([]));
 
   render(
-    <Router>
-      <CartPage />
-    </Router>
+      <Router>
+        <CartPage />
+      </Router>
   );
 
   // Vérification que le message "Votre panier est vide" est affiché
