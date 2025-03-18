@@ -20,6 +20,7 @@
     "react-router-dom": "^7.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.1",
     "@react-router/dev": "^7.3.0",
     "@tailwindcss/vite": "^4.0.0",
     "@testing-library/dom": "^10.4.0",
