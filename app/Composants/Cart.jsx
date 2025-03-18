@@ -6,8 +6,10 @@ const CartPage = () => {
     // Liste d'articles dans le panier
     const [cartItems, setCartItems] = useState(
         cart.map((element) => {
-            return {id: x++, name: element.name, price: element.property[1], quantity: element.property[0]};
-    );
+                return {id: x++, name: element.name, price: element.property[1], quantity: element.property[0]};
+            };
+        );
+    ;
 
     // Calcul du total du panier
     const getTotalPrice = () => {
