@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // permet de naviguer entre les pages
+import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom"; // permet de naviguer entre les pages
 import Navbar from "./Navbar.jsx";
 
 // Page Panier
@@ -13,7 +13,7 @@ const CartPage = () => {
     // Liste d'articles dans le panier
     const [cartItems, setCartItems] = useState(
         cart.map((element) => {
-            return { id: x++, name: element.name, price: element.property[1], quantity: element.property[0] };
+            return {id: x++, name: element.name, price: element.property[1], quantity: element.property[0]};
         })
     );
 
@@ -33,7 +33,7 @@ const CartPage = () => {
     // Mettre à jour la quantité d'un article
     const updateQuantity = (id, quantity) => {
         setCartItems(
-            cartItems.map((item) => (item.id === id ? { ...item, quantity } : item))
+            cartItems.map((item) => (item.id === id ? {...item, quantity} : item))
         );
     };
 
@@ -41,7 +41,7 @@ const CartPage = () => {
         <>
             <nav>
                 <h1>Panier</h1>
-                <Navbar />
+                <Navbar/>
             </nav>
 
             <div>
