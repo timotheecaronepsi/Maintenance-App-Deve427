@@ -6,6 +6,7 @@ import '../app.css';
 export function Accueil() {
     return (
         <>
+            <title>Accueil</title>
             <nav>
                 <h1>Accueil</h1>
                 <Navbar />
