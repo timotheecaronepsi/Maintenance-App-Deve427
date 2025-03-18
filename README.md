@@ -1,5 +1,3 @@
-Voici le fichier `README.md` traduit en français :
-
 ```markdown
 # Accueil à React Router !
 
