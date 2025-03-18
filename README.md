@@ -1,61 +1,65 @@
-# Acceuil to React Router!
+Voici le fichier `README.md` traduit en français :
 
-A modern, production-ready template for building full-stack React applications using React Router.
+```markdown
+# Accueil à React Router !
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+Un modèle moderne et prêt pour la production pour construire des applications React full-stack en utilisant React
+Router.
 
-## Features
+[![Ouvrir dans StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Fonctionnalités
 
-## Getting Started
+- 🚀 Rendu côté serveur
+- ⚡️ Remplacement de module à chaud (HMR)
+- 📦 Regroupement et optimisation des ressources
+- 🔄 Chargement et mutations de données
+- 🔒 TypeScript par défaut
+- 🎉 TailwindCSS pour le style
+- 📖 [Documentation React Router](https://reactrouter.com/)
+
+## Démarrage
 
 ### Installation
 
-Install the dependencies:
+Installez les dépendances :
 
 ```bash
 npm install
 ```
 
-### Development
+### Développement
 
-Start the development server with HMR:
+Démarrez le serveur de développement avec HMR :
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Votre application sera disponible à `http://localhost:5173`.
 
-## Building for Production
+## Construction pour la production
 
-Create a production build:
+Créez une build de production :
 
 ```bash
 npm run build
 ```
 
-## Deployment
+## Déploiement
 
-### Docker Deployment
+### Déploiement Docker
 
-To build and run using Docker:
+Pour construire et exécuter en utilisant Docker :
 
 ```bash
 docker build -t my-app .
 
-# Run the container
+# Exécuter le conteneur
 docker run -p 3000:3000 my-app
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+L'application conteneurisée peut être déployée sur n'importe quelle plateforme supportant Docker, y compris :
 
 - AWS ECS
 - Google Cloud Run
@@ -64,24 +68,28 @@ The containerized application can be deployed to any platform that supports Dock
 - Fly.io
 - Railway
 
-### DIY Deployment
+### Déploiement DIY
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+Si vous êtes familier avec le déploiement d'applications Node, le serveur d'application intégré est prêt pour la
+production.
 
-Make sure to deploy the output of `npm run build`
+Assurez-vous de déployer la sortie de `npm run build` :
 
 ```
 ├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
+├── package-lock.json (ou pnpm-lock.yaml, ou bun.lockb)
 ├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+│   ├── client/    # Ressources statiques
+│   └── server/    # Code côté serveur
 ```
 
-## Styling
+## Style
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+Ce modèle est livré avec [Tailwind CSS](https://tailwindcss.com/) déjà configuré pour une expérience de démarrage simple
+par défaut. Vous pouvez utiliser le framework CSS de votre choix.
 
 ---
 
-Built with ❤️ using React Router.
+Construit avec ❤️ en utilisant React Router.
+
+```
