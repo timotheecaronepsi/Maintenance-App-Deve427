@@ -6,6 +6,8 @@ import '@testing-library/jest-dom';
 
 
 // Mock de localStorage
+// Object.defineProperty est utilisé pour remplacer localStorage global par un mock personnalisé.
+
 const localStorageMock = (() => {
   let store = {};
   return {
@@ -20,6 +22,9 @@ Object.defineProperty(global, 'localStorage', {
   value: localStorageMock,
 });
 
+// Initialisation avant chaque test
+// Avant chaque test, on initialise un panier mocké dans le localStorage avec deux articles.
+
 beforeEach(() => {
   const mockCart = [
     { name: 'Article 1', property: [2, 15] }, // 2 quantités, prix 15€
@@ -28,9 +33,14 @@ beforeEach(() => {
   global.localStorage.setItem('cart', JSON.stringify(mockCart));
 });
 
+// Nettoyage après chaque test
+// Après chaque test, on efface le contenu du localStorage pour s'assurer qu'il n'y a pas de résidus d'un test à l'autre
+
 afterEach(() => {
   global.localStorage.clear();
 });
+
+// Test 1 : Rendu de la page du panier avec les articles
 
 test('renders cart page with items', () => {
   render(
@@ -50,6 +60,8 @@ test('renders cart page with items', () => {
   expect(quantities[1]).toBeInTheDocument(); // Vérifie que la deuxième occurrence est présente
 });
 
+// Test 2 : Calcul du total du panier
+
 test('calcul du total du panier', () => {
   render(
     <Router>
@@ -60,6 +72,8 @@ test('calcul du total du panier', () => {
   // Vérification que le total du panier est calculé correctement
   expect(screen.getByText('Total: 60€')).toBeInTheDocument();
 });
+
+// Test 3 : Mise à jour de la quantité d'un article
 
 test('mettre à jour la quantité d\'un article', () => {
   render(
@@ -77,6 +91,8 @@ test('mettre à jour la quantité d\'un article', () => {
   expect(screen.getByText('Total: 75€')).toBeInTheDocument();
 });
 
+// Test 4 : Suppression d'un article du panier
+
 test('supprimer un article du panier', () => {
   render(
     <Router>
@@ -92,6 +108,8 @@ test('supprimer un article du panier', () => {
   expect(screen.queryByText('Article 1')).toBeNull();
   expect(screen.getByText('Total: 30€')).toBeInTheDocument();
 });
+
+// Test 5 : Panier vide
 
 test('panier vide', () => {
   // Mock d'un panier vide
