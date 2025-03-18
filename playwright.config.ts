@@ -27,7 +27,7 @@ export default defineConfig({
 
   webServer: {
     command: 'npm run start',
-    url: 'http://localhost:5173', // Change de 3000 à 5173 si Vite est utilisé
+    url: 'http://localhost:5173', 
     reuseExistingServer: !process.env.CI,
     stdout: 'ignore',
     stderr: 'pipe',
